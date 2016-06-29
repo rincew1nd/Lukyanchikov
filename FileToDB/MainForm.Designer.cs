@@ -1,6 +1,6 @@
 ﻿namespace FileToDB
 {
-    partial class MainWindow
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.

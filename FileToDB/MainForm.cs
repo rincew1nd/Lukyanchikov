@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace FileToDB
 {
-    public partial class MainWindow : Form
+    public partial class MainForm : Form
     {
         private string _path;
 		private FileParser _fileParser;
 
-        public MainWindow()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -29,7 +29,7 @@ namespace FileToDB
 		{
 			EditForm editForm = new EditForm(false);
 			editForm.ShowDialog();
-			_fileParser.AddBook(editForm.Name, editForm.Count, editForm.Price);
+			_fileParser.AddBook(editForm.BookName, editForm.BookCount, editForm.BookPrice);
 		}
 
 		private void DeleteBook(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace FileToDB
 
 				EditForm editForm = new EditForm(true, bookName, bookCount, bookPrice);
 				editForm.ShowDialog();
-				_fileParser.ModifyBook(bookName, editForm.Name, editForm.Count, editForm.Price);
+				_fileParser.ModifyBook(bookName, editForm.BookName, editForm.BookCount, editForm.BookPrice);
 			}
 		}
 

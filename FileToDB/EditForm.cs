@@ -12,9 +12,9 @@ namespace FileToDB
 {
 	public partial class EditForm : Form
 	{
-		public string Name;
-		public int Count;
-		public double Price;
+		public string BookName;
+		public int BookCount;
+		public double BookPrice;
 
 		public EditForm(bool isEdit, string name = "", int count = 0, double price = 0)
 		{
@@ -33,10 +33,10 @@ namespace FileToDB
 		private void temp_button_Click(object sender, EventArgs e)
 		{
 			if (bookName.Text != "" &&
-				int.TryParse(bookCount.Text, out Count) &&
-				double.TryParse(bookPrice.Text, out Price))
+				int.TryParse(bookCount.Text, out BookCount) &&
+				double.TryParse(bookPrice.Text, out BookPrice))
 			{
-				Name = bookName.Text;
+                BookName = bookName.Text;
 				this.Close();
 			}
 			else

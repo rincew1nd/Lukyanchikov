@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileToDB", "FileToDB\FileTo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlToTable", "SqlToTable\SqlToTable.csproj", "{C14B33D3-D9EE-46B1-9492-779C4B6B2CC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpChat", "UdpChat\TcpChat.csproj", "{95891748-2202-4D60-87C5-11BAF8875A07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpChat", "TcpChat\TcpChat.csproj", "{95891748-2202-4D60-87C5-11BAF8875A07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
