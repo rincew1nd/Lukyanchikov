@@ -29,7 +29,7 @@ namespace TcpChat
             Console.Write("Client nick - ");
             var name = Console.ReadLine();
 
-            var updClient = new UdpBase(client_host, client_port, server_port, name);
+            var updClient = new TcpBase(client_host, client_port, server_port, name);
         }
     }
 
@@ -42,14 +42,15 @@ namespace TcpChat
         {
             _tcpReceiver = new TcpListener(IPAddress.Any, clientPort);
             _tcpReceiver.Start();
-            _tcpReceiver.BeginAcceptTcpClient(new AsyncCallback(AcceptClient), null);
+            _tcpReceiver.BeginAcceptTcpClient(AcceptClient, null);
 
             _name = name;
+			Console.ReadLine();
         }
 
         private void AcceptClient(IAsyncResult ar)
         {
-            using (var client = _tcpReceiver.EndAcceptTcpClient(ar))
+			var client = _tcpReceiver.EndAcceptTcpClient(ar);
             using (var stream = client.GetStream())
             using (var br = new BinaryReader(stream))
             using (var bw = new BinaryWriter(stream))
