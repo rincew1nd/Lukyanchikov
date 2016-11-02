@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -33,14 +34,15 @@ namespace SqlToTable
         {
             try
             {
-                using (var cnn = new SqlConnection(
-                    "Data Source=" + _settings.Host +
+                using (var cnn = new MySqlConnection(
+					"DataBase=" + _settings.DataBase +
+					"; Data Source=" + _settings.Host +
                     "; User ID=" + _settings.User +
                     "; Password=" + _settings.Password +
                     "; Connection Timeout=120;"))
                 {
-                    var dataAdapter = new SqlDataAdapter();
-                    var command = new SqlCommand(queryd, cnn);
+                    var dataAdapter = new MySqlDataAdapter();
+                    var command = new MySqlCommand(queryd, cnn);
                     var dataSet = new DataSet();
 
                     command.CommandText = queryd;

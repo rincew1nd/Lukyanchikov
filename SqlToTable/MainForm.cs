@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace SqlToTable
@@ -9,12 +10,12 @@ namespace SqlToTable
         public MainForm()
         {
             InitializeComponent();
-            QueryString.Text = "SELECT * FROM Test WHERE ID = '3'";
+            QueryString.Text = "SELECT * FROM items WHERE characterId = 3";
         }
 
         private void Execute_ButtonClick(object sender, EventArgs e)
         {
-            var msql = new MySql(Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "settings.xml");
+            var msql = new MySql(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Path.DirectorySeparatorChar + "settings.xml");
             msql.ExecuteToTable(QueryString.Text, ResultTable);
         }
     }

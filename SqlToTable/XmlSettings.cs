@@ -8,9 +8,10 @@ namespace SqlToTable
 {
     [Serializable]
     public class XmlSettings
-    {
-        public string Host;
-        public string User;
+	{
+		public string DataBase;
+		public string Host;
+		public string User;
         public string Password;
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,7 @@ namespace FileToDB
         {
             InitializeComponent();
 
-			_path = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "test.txt";
+			_path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Path.DirectorySeparatorChar + "test.txt";
 			_fileParser = FileParser.GetInstance();
 			_fileParser.SetDataGridView(Table);
         }

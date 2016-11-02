@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <XmlSettings>
-  <Host></Host>
-  <User></User>
+  <Host>127.0.0.1</Host>
+  <User>root</User>
   <Password></Password>
 </XmlSettings>
